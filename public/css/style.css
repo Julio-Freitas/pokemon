@@ -1,0 +1,52 @@
+* {
+  font-size: 65.2%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html, body{
+  background: rebeccapurple;
+  height: 100vw;
+  font-family: 'Roboto', sans-serif;
+}
+
+.loading {
+  font-size: 2.5rem;
+  color: rgba(197, 197, 204, 0.747);
+  font-weight: bolder;
+}
+.listpokemon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+  max-width: 900px;
+  justify-content: center;
+  margin: 60px auto 0;
+}
+
+.listpokemon__card-pokemon {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-width: 200px;
+  max-height: 200px;
+  width: 200px;
+  background: #2c657bad;
+  padding: 20px;
+  border-radius: 5px;
+}
+.listpokemon__card-pokemon:hover {
+  transition: ease-in-out 0.5s;
+  background: #1a4758ad;
+  box-shadow: 1px 0 0 #f2f2f2 ;
+  cursor: pointer;
+}
+.listpokemon__card-pokemon__text{
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+  display: inline;
+}
