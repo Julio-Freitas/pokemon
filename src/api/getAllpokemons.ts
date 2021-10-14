@@ -3,14 +3,14 @@ import { APIReponse } from './types';
 const getUrl = (id: number) => `https://pokeapi.co/api/v2/pokemon/${id}`;
 
 const getAllPokemon = async (): Promise<APIReponse[]> => {
-  const result = [];
+  const promisesPokemons = Array(150)
+    .fill('')
+    .map(async (_, pokemonId) => {
+      const resultSingle = await fetch(getUrl(pokemonId + 1));
+      return await resultSingle.json();
+    });
 
-  for (let pokemon = 1; pokemon <= 150; pokemon++) {
-    const resultFetch = await fetch(getUrl(pokemon));
-    result.push(await resultFetch.json());
-  }
-
-  const pokemonResult = await Promise.all(result);
+  const pokemonResult = await Promise.all(promisesPokemons);
   return pokemonResult;
 };
 
